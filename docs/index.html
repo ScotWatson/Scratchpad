@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+html, body {touch-action: none;}
+    </style>
+  </head>
+  <body>
+    <script>
+const canvas = document.createElement("canvas");
+document.body.appendChild(canvas);
+canvas.addEventListener("touchstart", touchstart);
+canvas.addEventListener("touchmove", touchmove);
+canvas.addEventListener("touchend", touchend);
+const info = document.createElement("p");
+document.body.appendChild(info);
+function touchstart(evt) {
+  evt.preventDefault();
+  console.log("touchstart");
+  info.innerHTML = "";
+  for (const touch of Array.from(evt.touches)) {
+    const p1 = document.createElement("p");
+    p1.innerHTML = "id: " + touch.identifier;
+    info.appendChild(p1);
+    const p2 = document.createElement("p");
+    p2.innerHTML = "x: " + touch.pageX;
+    info.appendChild(p2);
+    const p3 = document.createElement("p");
+    p3.innerHTML = "y: " + touch.pageY;
+    info.appendChild(p3);
+    const p4 = document.createElement("p");
+    p4.innerHTML = "raduis-x: " + touch.radiusX;
+    info.appendChild(p4);
+    const p5 = document.createElement("p");
+    p5.innerHTML = "radius-y: " + touch.radiusY;
+    info.appendChild(p5);
+    const p6 = document.createElement("p");
+    p6.innerHTML = "rotation-angle: " + touch.rotationAngle;
+    info.appendChild(p6);
+    const p7 = document.createElement("p");
+    p7.innerHTML = "force: " + touch.force;
+    info.appendChild(p7);
+  }
+}
+function touchmove(evt) {
+  evt.preventDefault();
+  console.log("touchmove");
+  info.innerHTML = "";
+  for (const touch of Array.from(evt.touches)) {
+    const p1 = document.createElement("p");
+    p1.innerHTML = "id: " + touch.identifier;
+    info.appendChild(p1);
+    const p2 = document.createElement("p");
+    p2.innerHTML = "x: " + touch.pageX;
+    info.appendChild(p2);
+    const p3 = document.createElement("p");
+    p3.innerHTML = "y: " + touch.pageY;
+    info.appendChild(p3);
+    const p4 = document.createElement("p");
+    p4.innerHTML = "raduis-x: " + touch.radiusX;
+    info.appendChild(p4);
+    const p5 = document.createElement("p");
+    p5.innerHTML = "radius-y: " + touch.radiusY;
+    info.appendChild(p5);
+    const p6 = document.createElement("p");
+    p6.innerHTML = "rotation-angle: " + touch.rotationAngle;
+    info.appendChild(p6);
+    const p7 = document.createElement("p");
+    p7.innerHTML = "force: " + touch.force;
+    info.appendChild(p7);
+  }
+}
+function touchend(evt) {
+  evt.preventDefault();
+  console.log("touchend");
+  info.innerHTML = "";
+  for (const touch of Array.from(evt.touches)) {
+    const p1 = document.createElement("p");
+    p1.innerHTML = "id: " + touch.identifier;
+    info.appendChild(p1);
+    const p2 = document.createElement("p");
+    p2.innerHTML = "x: " + touch.pageX;
+    info.appendChild(p2);
+    const p3 = document.createElement("p");
+    p3.innerHTML = "y: " + touch.pageY;
+    info.appendChild(p3);
+    const p4 = document.createElement("p");
+    p4.innerHTML = "raduis-x: " + touch.radiusX;
+    info.appendChild(p4);
+    const p5 = document.createElement("p");
+    p5.innerHTML = "radius-y: " + touch.radiusY;
+    info.appendChild(p5);
+    const p6 = document.createElement("p");
+    p6.innerHTML = "rotation-angle: " + touch.rotationAngle;
+    info.appendChild(p6);
+    const p7 = document.createElement("p");
+    p7.innerHTML = "force: " + touch.force;
+    info.appendChild(p7);
+  }
+}
+    </script>
+  </body>
+</html>
