@@ -11,20 +11,33 @@ body {margin:0}
   <body>
     <script>
 const canvas = document.createElement("canvas");
-canvas.style.width = "100%";
 const ctx = canvas.getContext("2d");
 document.body.appendChild(canvas);
+canvas.addEventListener("touchstart", touchstart);
 canvas.addEventListener("touchmove", touchmove);
+canvas.addEventListener("touchend", touchmove);
+function touchstart(evt) {
+  evt.preventDefault();
+  console.log("touchstart");
+  if (evt.touches.length === 1) {
+    const touch = evt.touches.item(0);
+    ctx.moveTo(touch.pageX, touch.pageY);
+  }
+}
 function touchmove(evt) {
   evt.preventDefault();
   console.log("touchmove");
   if (evt.touches.length === 1) {
     const touch = evt.touches.item(0);
-    ctx.strokeRect(touch.pageX, touch.pageY, 1, 1);
+    ctx.lineTo(touch.pageX, touch.pageY);
+    ctx.stroke();
   }
 }
 function resize() {
+  canvas.style.width = window.innerWidth + "px";
   canvas.style.height = window.innerHeight + "px";
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 resize();
 window.addEventListener("resize", resize);
