@@ -20,7 +20,7 @@ function touchmove(evt) {
   console.log("touchmove");
   if (evt.touches.length === 1) {
     const touch = evt.touches.item(0);
-    ctx.strokeRect(touch.pageX, touch.pageY, touch.pageX + 1, touch.pageY + 1);
+    ctx.strokeRect(touch.pageX, touch.pageY, 1, 1);
   }
 }
 function resize() {
