@@ -20,7 +20,7 @@ canvas.addEventListener("touchend", touchmove);
 canvas.addEventListener("pointerstart", pointer);
 canvas.addEventListener("pointermove", pointer);
 canvas.addEventListener("pointerend", pointer);
-function pointer() {
+function pointer(evt) {
   evt.preventDefault();
   console.log(evt);
 }
