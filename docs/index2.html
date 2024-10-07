@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
 html, body {touch-action: none;}
+body {margin:0}
     </style>
   </head>
   <body>
     <script>
 const canvas = document.createElement("canvas");
+canvas.style.width = "100%";
 const ctx = canvas.getContext("2d");
 document.body.appendChild(canvas);
 canvas.addEventListener("touchmove", touchmove);
@@ -21,6 +23,11 @@ function touchmove(evt) {
     ctx.strokeRect(touch.pageX, touch.pageY, touch.pageX + 1, touch.pageY + 1);
   }
 }
+function resize() {
+  canvas.style.height = window.innerHeight + "px";
+}
+resize();
+window.addEventListener("resize", resize);
     </script>
   </body>
 </html>
