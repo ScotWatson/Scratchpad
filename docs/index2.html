@@ -17,6 +17,13 @@ document.body.appendChild(canvas);
 canvas.addEventListener("touchstart", touchstart);
 canvas.addEventListener("touchmove", touchmove);
 canvas.addEventListener("touchend", touchmove);
+canvas.addEventListener("pointerstart", pointer);
+canvas.addEventListener("pointermove", pointer);
+canvas.addEventListener("pointerend", pointer);
+function pointer() {
+  evt.preventDefault();
+  console.log(evt);
+}
 function touchstart(evt) {
   evt.preventDefault();
   console.log("touchstart");
